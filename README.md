@@ -1,6 +1,6 @@
 # AMP4RD - Assessing Molecular Pathogenicity for Rare Diseases
 
-This reository contains all the information about the Rare Disease Service Bundle 1.
+This repository contains all the information about the Rare Disease Service Bundle 1.
 
 For more information about this servide bundle please contact:
 

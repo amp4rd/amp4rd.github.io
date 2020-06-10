@@ -1,0 +1,225 @@
+/* Spae out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #d97b2d !important; 
+  /* 4689a3  */
+}
+
+a {
+   font-weight:400;
+}
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+  background: white !important;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+/*    max-width: 730px; */
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+}
+/*
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+*/
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+/* Table style */
+.left_cell {
+	float:left;
+	width:25%;
+}
+.right_cell {
+        float:right;
+        width:75%;
+}
+.center_cell {
+        display: inline-block;
+        width:100%;
+}
+
+.text {
+	text-align:left;
+	font-weight:300;
+	font-size:16px !important;
+}
+
+.text-small {
+        text-align:left;
+        font-size:10px !important;
+}
+
+.text-justify {
+        text-align:justify;
+        font-size:10px !important;
+}
+
+p.text {
+	margin: 0px; 
+	padding: 0px;
+        text-align:justify;
+	font-weight:300;
+        font-size:16px !important;
+}
+
+p.text-small {
+        margin: 0px;
+        padding: 0px;
+        text-align:left;
+        font-size:14px !important;
+}
+
+p.text-justify {
+        margin: 0px;
+        padding: 0px;
+        text-align:justify;
+        font-size:16px !important;
+}
+
+
+li.text {
+	font-size:16px;
+	font-weight: 300;
+}
+table.radio: td {
+        text-align:left;
+	width:60px;
+        font-size:15px !important;
+}
+
+#footer-ok {
+  width:100%;
+  text-align:center;
+  border-top: 1px solid #e5e5e5;
+}
+
+#bottom-ok {
+  width:100%;
+  text-align:center;
+  font-size:8pt;
+}
+
+.footer-ok {
+  width:100%;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  background: #d97b2d !important;
+}
+
+.footer-ok::after {
+ color: white;
+ content: 'Elixir Italy - Rare Disease';
+}
+
+.biofold {
+ font-size:3.5em;
+ text-align:left;
+ font-weight: bold;
+}
+
+table.dataTable tbody tr.even-row{
+    background-color:#eeeeee;
+}
+table.dataTable tbody tr.odd-row{
+    background-color:white;
+}
+
+h4.title {
+    color: #1f3751;
+}
+
+h4.section {
+    font-weight:400;
+    font-size:16px;
+    color: #1f3751;
+}
+
+td.footer {
+   background: #d97b2d !important;
+   color: white;
+}
+td.photo {
+   text-align:left;
+   padding-left: 30px;
+   padding-bottom: 10px;
+}
+
+
+
+td.footer::after {
+content: 'University of Bologna, Via F. Selmi 3, Room 104. Bologna, 40126 (Italy).';
+}
+
+td.pathogenic  {
+    color: #ff3333;
+}
+td.benign  {
+    color: #d97b2d;
+}
+

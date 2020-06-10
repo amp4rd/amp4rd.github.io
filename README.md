@@ -5,4 +5,5 @@ This repository contains all the information about the Rare Disease Service Bund
 For more information about this servide bundle please contact:
 
 Emidio Capriotti (emidio.capriotti@unibo.it)
+
 David Salgado (david.salgado@univ-amu.fr)

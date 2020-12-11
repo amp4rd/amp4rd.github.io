@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+  .popover-inner {
+    width: 100% !important;
+    max-width:500px !important;
+  }
+  .popover {
+    width: 100% !important;
+    max-width:500px !important;
+  }
+    
+
+  </style>
+  
+</head>
+<body>
+  
+  <div class="mermaid" style="visibility: hidden;">
+   graph TB;
+        classDef greyClass fill:#A9A9A9,stroke:#FF8C00,stroke-width:4px;
+        classDef opClass fill:#F8F8FF,stroke:#FF8C00,stroke-width:4px,color:#000080;
+        
+        A[DNASeq data]-->B([Variant Calling]);
+        B-->C[Variant Data];
+        C-->D([Annotation]);
+        
+        D-->E([Variant filtering]);
+        D-->G["Variation impact (structure, function and stability)"];
+        E-->H[Disease report];
+        G-->I([Interpretation]);
+        I-->J{Coding};
+        I-->K{Non coding};
+        J-->E;
+        K-->E;
+        L[Clinical data]-->M([Comparison to OMIM/ORDO/HPO]);
+        M-->N[Standardized clinical data];
+        N-->E;
+        class A greyClass
+        class C greyClass
+        class G greyClass
+        class J greyClass
+        class K greyClass
+        class H greyClass
+        class L greyClass
+        class N greyClass
+
+        class B opClass
+        class D opClass
+        class I opClass
+        class E opClass
+        class M opClass
+        
+        click B "https://bio.tools/t?page=1&q=%27Variant%20calling%27&topic=%27Sequencing%27&sort=score" "Click this box to visualise tools available in https://bio.tools for this process"
+        click D "https://bio.tools/t?page=1&q=Variant%20annotation&sort=score" "Click this box to visualise tools available in https://bio.tools for this process"
+        click I "https://bio.tools/t?page=1&q=variant%20interpretation&sort=score" "Click this box to visualise tools available in https://bio.tools for this process"
+        click E "https://bio.tools/t?page=3&q=%27Variant%20filtering%27&sort=score" "Click this box to visualise tools available in https://bio.tools for this process"
+  </div>
+  <script src="https://unpkg.com/mermaid@8.5.2/dist/mermaid.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+  
+  <script>
+
+      // With the above scripts loaded, you can call `tippy()` with a CSS
+      // selector and a `content` prop:
+      
+    var initTooltip = function(){
+      $('#A').attr('data-content', "<H3>Input formats</H3>FASTQ, SAM, BAM, CRAM<BR><hr><H3>Example of input</H3>FastQ: <pre style='font-size:10px; color:red'>@SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72\nGGGTGATGGCCGCTGCCGATGGCGTCAAATCCCACCAAGTTACCCTTAACAACTTAAGGGTTTTCAAATAGA\n+SRR001666.1 071112_SLXA-EAS1_s_7:5:1:817:345 length=72\nIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IG9ICIIIIIIIIIIIIIIIIIIIIDIIIIIII>IIIIII/\n@SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72\nGTTCAGGGATACGACGTTTGTATTTTAAGAATCTGAAGCAGAAGTCGATGATAATACGCGTCGTTTTATCAT\n+SRR001666.2 071112_SLXA-EAS1_s_7:5:1:801:338 length=72\nIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII6IBIIIIIIIIIIIIIIIIIIIIIIIGII>IIIII-I)8I</pre><HR><H3>More details about input formats</H3>FASTQ - <a href='https://en.wikipedia.org/wiki/FASTQ_format' target='_BLANK'>Wikipedia</a> <a href='https://genome.ucsc.edu/FAQ/FAQformat.html' target='_BLANK'>UCSC</a><br>SAM - <a href='https://en.wikipedia.org/wiki/SAM_(file_format)' target='_BLANK'>Wikipedia</a> <a href='https://genome.ucsc.edu/FAQ/FAQformat.html' target='_BLANK'>UCSC</a><br>BAM - <a href='https://en.wikipedia.org/wiki/Binary_Alignment_Map' target='_BLANK'>Wikipedia</a> <a href='https://genome.ucsc.edu/FAQ/FAQformat.html' target='_BLANK'>UCSC</a><br>CRAM - <a href='https://en.wikipedia.org/wiki/CRAM_(file_format)' target='_BLANK'>Wikipedia</a> <a href='https://genome.ucsc.edu/FAQ/FAQformat.html' target='_BLANK'>UCSC</a><br>");
+      $('#A').attr('data-toggle', "popover");     
+      $('#A').popover({html:true});
+
+      $('#C').attr('data-content', "<H3>Variant data report</H3>Tabulated, BCV or VCF files (prefered)<BR><hr>VCF files can be used to describe: <br/> - SNPs or indels <BR/> - Structural Variations  <br /> Using <a href=\"https://github.com/samtools/hts-specs/blob/master/VCFv4.3.pdf\" target=\"_BLANK\">VCF4 specifications</a>.<br/><hr><H3>Example of input</H3>VCFv4.3 example: <hr><pre style='font-size:10px; color:red'>##fileformat=VCFv4.3\n##fileDate=20090805\n##source=myImputationProgramV3.1\n##reference=file:///seq/references/1000GenomesPilot-NCBI36.fasta\n##contig=&lt;ID=20,length=62435964,assembly=B36,md5=f126cdf8a6e0c7f379d618ff66beb2da,species=\"Homo sapiens\",taxonomy=x&gt;\n##phasing=partial\n##INFO=\&lt;ID=NS,Number=1,Type=Integer,Description=\"Number of Samples With Data\"&gt;\n##INFO=&lt;ID=DP,Number=1,Type=Integer,Description=\"Total Depth\"&gt;\n##INFO=&lt;ID=AF,Number=A,Type=Float,Description=\"Allele Frequency\"&gt;\n##INFO=&lt;ID=AA,Number=1,Type=String,Description=\"Ancestral Allele\"&gt;\n##INFO=&lt;ID=DB,Number=0,Type=Flag,Description=\"dbSNP membership, build 129\"&gt;\n##INFO=&lt;ID=H2,Number=0,Type=Flag,Description=\"HapMap2 membership\"&gt;\n##FILTER=&lt;ID=q10,Description=\"Quality below 10\"&gt;\n##FILTER=&lt;ID=s50,Description=\"Less than 50% of samples have data\"&gt;\n##FORMAT=&lt;ID=GT,Number=1,Type=String,Description=\"Genotype\"&gt;\n##FORMAT=&lt;ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\"&gt;\n##FORMAT=&lt;ID=DP,Number=1,Type=Integer,Description=\"Read Depth\"&gt;\n##FORMAT=&lt;ID=HQ,Number=2,Type=Integer,Description=\"Haplotype Quality\"&gt;\n#CHROM POS      ID         REF   ALT    QUAL  FILTER   INFO                             FORMAT       NA00001         NA00002          NA00003\n20     14370    rs6054257  G     A      29    PASS    NS=3;DP=14;AF=0.5;DB;H2           GT:GQ:DP:HQ  0|0:48:1:51,51  1|0:48:8:51,51   1/1:43:5:.,.\n20     17330    .          T     A      3     q10     NS=3;DP=11;AF=0.017               GT:GQ:DP:HQ  0|0:49:3:58,50  0|1:3:5:65,3     0/0:41:3\n20     1110696  rs6040355  A     G,T    67    PASS    NS=2;DP=10;AF=0.333,0.667;AA=T;DB GT:GQ:DP:HQ  1|2:21:6:23,27  2|1:2:0:18,2     2/2:35:4\n20     1230237  .          T     .      47    PASS    NS=3;DP=13;AA=T                   GT:GQ:DP:HQ  0|0:54:7:56,60  0|0:48:4:51,51   0/0:61:2\n20     1234567  microsat1  GTC   G,GTCT 50    PASS    NS=3;DP=9;AA=G                    GT:GQ:DP     0/1:35:4        0/2:17:2         1/1:40:3\n</pre><HR><H3>More details about VCF formats</H3>VCF - <a href='https://en.wikipedia.org/wiki/Variant_Call_Format' target='_BLANK'>Wikipedia</a><br>VCF Specifications - <a href=\"https://github.com/samtools/hts-specs/blob/master/VCFv4.3.pdf\" target=\"_BLANK\">VCF4.3 specifications</a> - <a href=\"https://github.com/samtools/hts-specs\" target=\"_BLANK\">Github Repository</a><br>");
+      $('#C').attr('data-toggle', "popover");     
+      $('#C').popover({html:true});
+
+
+
+
+    };
+
+    var config = {
+        startOnLoad:true,
+        flowchart:{
+            useMaxWidth:true,
+            htmlLabels:true,
+            curve:'cardinal',
+        },
+        securityLevel:'loose',
+        mermaid: {
+            callback:function(svgID) {
+                document.getElementById(svgID).parentNode.style.visibility = "visible";
+                initTooltip();
+            }
+        }
+    };
+
+    mermaid.initialize(config);
+
+
+  </script>
+</body>
+</html>
